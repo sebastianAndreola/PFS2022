@@ -5,7 +5,7 @@ let vuelta_1 : number = readlineSync.questionFloat("Tiempo para vuelta 1 en seg:
 let vuelta_2 : number = readlineSync.questionFloat("Tiempo para vuelta 2 en seg:: "); 
 let vuelta_3 : number = readlineSync.questionFloat("Tiempo para vuelta 3 en seg:: "); 
 let vuelta_4 : number = readlineSync.questionFloat("Tiempo para vuelta 4 en seg:: ");
-​
+​//
 let tiempoTotal : number = vuelta_1 + vuelta_2 + vuelta_3 + vuelta_4 ;
 let promedioVuelta : number = tiempoTotal / 4 ;
 ​
