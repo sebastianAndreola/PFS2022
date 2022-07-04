@@ -1,0 +1,106 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border : 1px solid grey;
+}
+
+h1 {
+    color: aquamarine;
+    font-size: 40px;
+    font-weight: bold;
+}
+header{
+
+    color:brown;
+
+}
+
+.btn{
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 10px 5px;
+
+}
+
+.btn-orange
+{
+    background-color: orange;
+    color: white;
+}
+
+.pblue{
+
+    color: rgb(165, 127, 255);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#soloeste{
+
+    color: rgb(165, 127, 255);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+
+    background-color: rgb(199, 191, 207);
+
+}
+
+.bordeGris{
+
+ border: 2px solid grey;
+
+}
+
+#btnTirarDados{
+
+    /*color: brown;
+    background-color:rgb(69, 18, 18);*/
+}
+
+.encabezado{
+
+    font-size: 20px;
+    text-align: center;
+    border: solid;
+    background-image: url("../imagenes/movediza.jpg");
+    background-color: rgba(199, 185, 213,50%);
+
+}
+
+.noticias{
+
+    border: solid;
+    background-image: url("../imagenes/movediza.jpg");
+    /*height: 800px;*/    
+}
+
+.importante{    
+
+    color: rgb(253, 2, 2);    
+
+}
+
+.pie{
+
+    height: 40px;
+    background-color: slateblue;
+
+}
+
+.contacto{
+
+    text-align-last: right;
+    text-decoration: solid;
+    font-style:italic;
+    font-weight: bold;
+    
+}
+
