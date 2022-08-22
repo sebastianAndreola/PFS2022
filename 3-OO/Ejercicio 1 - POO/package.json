@@ -1,0 +1,11 @@
+{
+  "name": "ejercicio-1---poo",
+  "version": "1.0.0",
+  "description": "Usamos el objeto nuestro visto en clase leemos de txt y levantamos los objetos",
+  "main": "index.js",
+  "scripts": {
+    "test": "cls && tsc pruebaManejoTexto.ts && node pruebaManejoTexto.js"
+  },
+  "author": "Sebastian Andreola",
+  "license": "ISC"
+}
