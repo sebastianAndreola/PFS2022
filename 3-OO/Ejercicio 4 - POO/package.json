@@ -1,0 +1,11 @@
+{
+  "name": "ejercicio-4---poo",
+  "version": "1.0.0",
+  "description": "Prueba de Celular con radio y otro que saca Fotos",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc pruebaCelular.ts && node pruebaCelular.js"
+  },
+  "author": "Sebastian Andreola",
+  "license": "ISC"
+}
