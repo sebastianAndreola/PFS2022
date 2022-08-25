@@ -7,7 +7,7 @@ let calculator2=new Calculadora("Hp calculator 200");
 let calculadoraCientifica1=new CalculadoraCientifica("Scientific Calculator Casio");
 
 calculator2.encenderApagar();
-calculator2.setValor(45);
+calculator2.setValor(45); 
 
 
 calculator.encenderApagar();

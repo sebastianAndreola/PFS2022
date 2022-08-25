@@ -13,7 +13,7 @@ constructor(nombre : String){
 }   
 
 //Elimina todas las calculadoras
-public eliminarCalculadoras() : void{
+public eliminarCalculadoras() : void{ 
  
   let i=0
   let largo=this.calculadoras.length;

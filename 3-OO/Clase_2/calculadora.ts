@@ -5,7 +5,7 @@ export default class Calculadora {
     private marca : String;
     protected encendida : boolean;
     protected valorPantalla : number;
-    private bateria : Bateria;
+    private bateria : Bateria; 
    
     //Constructor de la clase Calculadora
     constructor(nombre : String){

@@ -2,7 +2,7 @@ export default class Bateria{
 
     private marca : String;
     private tipo : String;
-    private porcentajeCarga : number;
+    private porcentajeCarga : number; 
     
     //Constructor de clase Bateria
     constructor(marca : String, tipo : String, carga : number){
