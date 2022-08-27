@@ -6,6 +6,6 @@
   "scripts": {
     "test": "tsc haciendoCalculos.ts && node haciendoCalculos.js"
   },
-  "author": "Sebastian Andreola",
+  "author": "Sebastian Andreola", 
   "license": "ISC" 
 }

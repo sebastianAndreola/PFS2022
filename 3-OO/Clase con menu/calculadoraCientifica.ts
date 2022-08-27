@@ -6,7 +6,7 @@ private pi = 3.141592;
 private shift : boolean; //Si es verdadera se aplica la segunda funcion de la tecla, sino la primera funcion de la misma
 
 public constructor(nombre : string){
-    
+     
     super(nombre); 
     this.shift = false;
 

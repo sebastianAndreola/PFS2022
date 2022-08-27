@@ -2,7 +2,7 @@ import Bateria from './bateria.js';
 
 export default class Calculadora {
     //Estado
-    private nombre : string;
+    private nombre : string; 
     protected encendida : boolean;
     protected valorPantalla : number;
     private bateria : Bateria; 

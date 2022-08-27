@@ -7,7 +7,7 @@ private calculadoras : Calculadora [];
 
 constructor(nombre : String){
 
-  this.calculadoras=new Array();   
+  this.calculadoras=new Array();    
   this.nombre=nombre;   
   
 }   

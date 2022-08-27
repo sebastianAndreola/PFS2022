@@ -8,7 +8,7 @@ function mostrarCalculadoras(): void{
 let opcion : string;
 opcion = RLS.question("ingrese una opcion ( C -CREAR / R- LEER / U- ACTUALIZAR / D- BORRAR / M - MOSTRAR POOL X -salir) : ") 
 opcion=opcion.toUpperCase();
-let calculator,posicion;
+let calculator,posicion; 
 let calculatorDatos: string [];
 let nombreCalculadora,datosCalculadora : string;
 let pool=new PoolDeCalculadoras("Grupo de Calculadoras");
