@@ -4,7 +4,7 @@
   "description": "Clase elegida de Calculadora",
   "main": "bateria.js",
   "scripts": {
-    "test": "tsc haciendoCalculos.ts && node haciendoCalculos.js"
+    "test": "tsc haciendoCalculos.ts && node haciendoCalculos.js" 
   },
   "author": "Sebastian Andreola", 
   "license": "ISC" 

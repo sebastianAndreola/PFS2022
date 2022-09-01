@@ -1,28 +1,53 @@
 import PoolDeCalculadoras from './poolCalculadoras.js';
 import Calculadora from './calculadora.js'; 
 import CalculadoraCientifica from './calculadoraCientifica.js';
+import ManejoTextos from './ManejoTexto';
+import Bateria from './bateria';
 import * as RLS from 'readline-sync';
 
 function mostrarCalculadoras(): void{
 
 let opcion : string;
-opcion = RLS.question("ingrese una opcion ( C -CREAR / R- LEER / U- ACTUALIZAR / D- BORRAR / M - MOSTRAR POOL X -salir) : ") 
+console.log(" ------------------------------------------------------------------------------------------------------");   
+opcion = RLS.question("( C - CREAR / R - LEER / U - ACTUALIZAR / D - BORRAR / M - MOSTRAR POOL / G - GRABAR A TXT / X - SALIR ) \n ------------------------------------------------------------------------------------------------------\n  :");  
 opcion=opcion.toUpperCase();
 let calculator,posicion; 
 let calculatorDatos: string [];
 let nombreCalculadora,datosCalculadora : string;
 let pool=new PoolDeCalculadoras("Grupo de Calculadoras");
+
+/*******
+*/
+let MT : ManejoTextos = new ManejoTextos('datosCalculadora.txt', ';', ',');
+
+let i=0;
+let calculadora:Calculadora;
+let fila : string[] = [];
+MT.leerArchivo();
+
+MT.getCantidadFilas();
+let cantidadFilas = MT.getCantidadFilas()-1;
+for (i; i < cantidadFilas; i++) {
+    fila = MT.getFila(i);
+    pool.createCalculadora(new Calculadora(fila[0],parseInt(fila[1]),fila[2],fila[3],parseInt(fila[4])));
+          
+}
+ 
+ 
+/******** */
+
+
 while (opcion !=  'X'){
   switch (opcion){    
     
   case 'C': {
   try{       
-      datosCalculadora= RLS.question('Ingrese los datos de la calculadora, separando con comas : ');
+      datosCalculadora= RLS.question('Ingrese el nombre de la calculadora a crear : ');
       calculatorDatos = datosCalculadora.split (',');
       if (calculatorDatos[0]=='')
         throw new Error ('El nombre de la calculadora no puede ser vacio');
       else{
-        calculator=new Calculadora(calculatorDatos[0]);        
+        calculator=new Calculadora(calculatorDatos[0],0,"Energizer","9A",100);        
         pool.createCalculadora(calculator);
       }         
      }
@@ -36,7 +61,7 @@ while (opcion !=  'X'){
   try{  
       nombreCalculadora = RLS.question('Ingrese el nombre de la calculadora a buscar : ');
       if (nombreCalculadora == '')
-        throw new Error ('El nombre de la calculadora a leer no puede ser vacio');
+        throw new Error ('El nombre de la calculadora a leer, no puede ser vacio');
       else{      
         posicion=pool.findModelo(nombreCalculadora);
         if (posicion != -1){
@@ -65,7 +90,7 @@ while (opcion !=  'X'){
         if (posicion != -1){
           datosCalculadora= RLS.question('Ingrese el nuevo nombre de la calculadora: ');
           calculatorDatos = datosCalculadora.split (',');        
-          pool.updateCalculadoras(new Calculadora(calculatorDatos[0]),posicion);
+          pool.updateCalculadoras(new Calculadora(calculatorDatos[0],0,"Energizer","9A",100),posicion);
         }
         else
         console.log(`No se encontro el modelo de calculadora ${nombreCalculadora}..`);
@@ -100,13 +125,50 @@ while (opcion !=  'X'){
   }
   case 'M': {
     console.log(pool);
+    break;
   }
 
-  default: {
-    console.log("Se esperaba un valor predeterminado C,R,U,D,X..");    
-  } 
+  case 'G': {
+    try{ 
+      let bateria:Bateria;
+      let info : Calculadora[] = [];
+      info=pool.leerCalculadoras();
+      if (info.length == 0)
+        throw new Error ('No se puede grabar una estructura vacia..');
+      else
+      {
+      let salida : string[] = [];
+      for (i = 0; i < info.length; i++) {
+            calculadora=info[i];
+            salida.push(calculadora.getNombre());
+            salida.push(MT.getSeparadorColumnas());
+            salida.push(calculadora.getValor().toString());
+            salida.push(MT.getSeparadorColumnas());
+            bateria=calculadora.getBateria();
+            salida.push(bateria.getMarca());
+            salida.push(MT.getSeparadorColumnas());
+            salida.push(bateria.getTipoBateria());
+            salida.push(MT.getSeparadorColumnas());
+            salida.push(bateria.getCarga().toString());
+            salida.push(MT.getSeparadorFilas());   
+
+      }
+      MT.grabarArchivo(salida);
+      console.log(`El archivo se grabo correctamente, en el archivo ${MT.getNombreArchivo()} `);  
   }
-  opcion = RLS.question("( C - CREAR / R - LEER / U - ACTUALIZAR / D - BORRAR / X - SALIR) :  ") ;
+}
+  catch (error){
+   console.log(error.message);
+  }
+    break;
+}
+
+default: {
+  console.log("Se esperaba un valor predeterminado C,R,U,D,X..");    
+} 
+}
+  console.log(" -------------------------------------------------------------------------------------------------------");   
+  opcion = RLS.question("( C - CREAR / R - LEER / U - ACTUALIZAR / D - BORRAR / M - MOSTRAR POOL / G - GRABAR A TXT  / X - SALIR ) \n -------------------------------------------------------------------------------------------------------\n  :");  
   opcion=opcion.toUpperCase();
 }
 

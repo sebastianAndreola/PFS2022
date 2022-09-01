@@ -1,11 +1,11 @@
 export default class Bateria{
 
-    private marca : String;
-    private tipo : String; 
+    private marca : string;
+    private tipo : string; 
     private porcentajeCarga : number; 
     
     //Constructor de clase Bateria
-    constructor(marca : String, tipo : String, carga : number){
+    constructor(marca : string, tipo : string, carga : number){
 
       this.marca=marca;    
       this.tipo = tipo ;
@@ -19,13 +19,13 @@ export default class Bateria{
 
     }
 
-    public getMarca() : String {
+    public getMarca() : string {
 
       return this.marca;
 
     }
 
-    public getTipoBateria() : String {
+    public getTipoBateria() : string {
 
       return this.tipo;
 
@@ -36,6 +36,8 @@ export default class Bateria{
       return this.porcentajeCarga;
       
     }
+
+   
 
     public setCarga(carga : number) : void {
 

@@ -40,7 +40,7 @@ public findModelo(modelo : string) : number{
 
 }
 
-//Devuelve un arreglo de calculadoras
+//Devuelve un arreglo de calculadoras 
 
 public leerCalculadoras() : Calculadora[] {
 

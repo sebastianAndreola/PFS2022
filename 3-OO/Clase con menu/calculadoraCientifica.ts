@@ -7,7 +7,7 @@ private shift : boolean; //Si es verdadera se aplica la segunda funcion de la te
 
 public constructor(nombre : string){
      
-    super(nombre); 
+    super(nombre,0,"Energizer","9A",100); 
     this.shift = false;
 
 }

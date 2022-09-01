@@ -8,11 +8,22 @@ export default class Calculadora {
     private bateria : Bateria; 
    
     //Constructor de la clase Calculadora
+    /*
     constructor(nombre : string){
 
       this.encendida=false;    
       this.nombre=nombre; 
       this.bateria = new Bateria("Energizer","9A",100);
+
+    }*/
+
+    //Constructor de la clase Calculadora
+    constructor(nombre : string, valorInicio : number, nombreBateria: string ,tipoBateria: string, cargaBateria : number){
+
+      this.encendida=false;    
+      this.nombre=nombre; 
+      this.valorPantalla=valorInicio;
+      this.bateria = new Bateria(nombreBateria,tipoBateria,cargaBateria);
 
     }
 
@@ -22,6 +33,11 @@ export default class Calculadora {
 
         return(this.nombre);
         
+    }
+    public getValor() : number{
+      
+      return this.valorPantalla;
+
     }
 
     public encenderApagar() : void {    
@@ -150,6 +166,12 @@ export default class Calculadora {
       if (this.encendida)
         
         console.log(this.bateria.getInfoBateria());
+
+    }
+  
+    public getBateria(): Bateria {
+  
+      return(this.bateria)
 
     }
   }
