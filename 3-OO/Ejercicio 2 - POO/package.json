@@ -1,0 +1,11 @@
+{
+  "name": "ejercicio-2---poo",
+  "version": "1.0.0",
+  "description": "ejercicio 2 Registro automotor",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc manejoRegistroAutomotor.ts && node manejoRegistroAutomotor.js"
+  },
+  "author": "Sebastian Andreola",
+  "license": "ISC"
+}
